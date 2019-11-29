@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="52188" started-at="2019-11-29T12:43:41 IST" finished-at="2019-11-29T12:44:33 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="52188" started-at="2019-11-29T12:43:41 IST" finished-at="2019-11-29T12:44:33 IST">
+      <class name="com.revature.ecms.loginTest.LoginWithInValidDetailsTest">
+        <test-method status="PASS" signature="beforelogin()[pri:0, instance:com.revature.ecms.loginTest.LoginWithInValidDetailsTest@72b6cbcc]" name="beforelogin" is-config="true" duration-ms="51480" started-at="2019-11-29T12:43:41 IST" finished-at="2019-11-29T12:44:32 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforelogin -->
+        <test-method status="PASS" signature="validateLogin()[pri:0, instance:com.revature.ecms.loginTest.LoginWithInValidDetailsTest@72b6cbcc]" name="validateLogin" duration-ms="627" started-at="2019-11-29T12:44:32 IST" finished-at="2019-11-29T12:44:33 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateLogin -->
+      </class> <!-- com.revature.ecms.loginTest.LoginWithInValidDetailsTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
