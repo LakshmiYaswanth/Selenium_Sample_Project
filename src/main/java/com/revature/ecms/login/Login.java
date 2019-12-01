@@ -1,5 +1,7 @@
 package com.revature.ecms.login;
 
+
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -28,6 +30,7 @@ public class Login {
 	@FindBy(how=How.XPATH,using="//button[@type='submit']")
 	WebElement submit;
 	
+	
 	 /**
 	
      * This POM method will be shown in test case to login in the application
@@ -35,11 +38,25 @@ public class Login {
      * @param strUserName
 
      * @param strPasword
+	 * @throws InterruptedException 
 
      */
-	public void login(String username,String pass) {
+	public void login(String username,String pass) throws InterruptedException {
 		userId.sendKeys(username);
 		password.sendKeys(pass);
 		submit.click();
+		Thread.sleep(5000);
+		 Alert alert = driver.switchTo().alert();		
+ 		
+	        // Capturing alert message.    
+	        String alertMessage= driver.switchTo().alert().getText();		
+	        		
+	        // Displaying alert message		
+	        System.out.println(alertMessage);	
+	        Thread.sleep(5000);
+	        		
+	        // Accepting alert		
+	        alert.accept();
+		
 	}
 }

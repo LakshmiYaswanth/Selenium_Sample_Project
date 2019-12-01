@@ -21,14 +21,14 @@ public class LoginWithInValidDetailsTest {
 	@BeforeTest
 	public void beforelogin() {
 		Browser browser=new Browser();
-		driver=browser.connectBrowsers("Chrome","https://ecms-dev-assaycr.firebaseapp.com");
+		driver=browser.connectBrowsers("Chrome","https://apollo-ecms.firebaseapp.com");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Assert.assertNotNull(driver);
 		
 	}
 	 /**
 
-     * This test go to https://ecms-dev-assaycr.firebaseapp.com
+     * This test go to https://apollo-ecms.firebaseapp.com
 
      * Login to application
 
@@ -37,12 +37,18 @@ public class LoginWithInValidDetailsTest {
      */
 	@Test
 	public void validateLogin() {
-	    
 	    loginpage=PageFactory.initElements(driver,Login.class);
-	   
-		loginpage.login("yes1234@gmail.com","admin1234");	
+		loginpage.login("yes1234@gmail.com","admin1234");
+		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		Assert.assertFalse(false);
 	}
+	 
+	@Test
+	public void usermangementTest() {
+		
+		
+	}
+	
 	
 }
 
