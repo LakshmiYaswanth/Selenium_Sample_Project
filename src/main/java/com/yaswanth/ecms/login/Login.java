@@ -1,7 +1,6 @@
-package com.revature.ecms.login;
+package com.yaswanth.ecms.login;
 
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -45,18 +44,6 @@ public class Login {
 		userId.sendKeys(username);
 		password.sendKeys(pass);
 		submit.click();
-		Thread.sleep(5000);
-		 Alert alert = driver.switchTo().alert();		
- 		
-	        // Capturing alert message.    
-	        String alertMessage= driver.switchTo().alert().getText();		
-	        		
-	        // Displaying alert message		
-	        System.out.println(alertMessage);	
-	        Thread.sleep(5000);
-	        		
-	        // Accepting alert		
-	        alert.accept();
 		
 	}
 }

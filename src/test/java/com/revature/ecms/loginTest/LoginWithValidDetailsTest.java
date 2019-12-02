@@ -11,19 +11,23 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.paulhammant.ngwebdriver.NgWebDriver;
-import com.revature.ecms.browser.Browser;
-import com.revature.ecms.login.Login;
-import com.revature.ecms.usermangement.Usermangement;
-
-
+import com.yaswanth.ecms.browser.Browser;
+import com.yaswanth.ecms.login.Login;
+import com.yaswanth.ecms.usermangement.Action;
+import com.yaswanth.ecms.usermangement.Active;
+import com.yaswanth.ecms.usermangement.CreateUser;
+import com.yaswanth.ecms.usermangement.Pageination;
+import com.yaswanth.ecms.usermangement.Usermangement;
 
 public class LoginWithValidDetailsTest {
 	NgWebDriver webdriver;
 	WebDriver driver;
 	Login loginpage;
 	Usermangement usermangement;
-
-	
+	Active ACTIVE;
+	CreateUser createuser;
+	Action ACTION;
+	Pageination PAGE;
 	 /**
      * This test shows whether it chrome is opened or not.
      */
@@ -95,21 +99,58 @@ public class LoginWithValidDetailsTest {
 			usermangement=PageFactory.initElements(driver,Usermangement.class);
 			try {
 				usermangement.downloadpage();
+				
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			Assert.assertNotNull(usermangement);
 	}
-	@Test(dependsOnMethods=" downlodeTest")
+	@Test(dependsOnMethods="downlodeTest")
 		public void activeTest() {
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-			usermangement=PageFactory.initElements(driver,Usermangement.class);
+			ACTIVE=PageFactory.initElements(driver,Active.class);
 				try {
-					usermangement.Activebutton(); 
+					ACTIVE.Activebutton();
+					ACTIVE.Accept();
+					ACTIVE.Cancel();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				Assert.assertNotNull(usermangement);	
+				Assert.assertNotNull(ACTIVE);	
 		}
+	@Test(dependsOnMethods="activeTest")
+		public void updateTest() {
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			ACTION=PageFactory.initElements(driver,Action.class);
+				try {
+					ACTION.action();	
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				Assert.assertNotNull(ACTIVE);	
+		}
+	@Test(dependsOnMethods="updateTest")
+	public void pageTest() {
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		PAGE=PageFactory.initElements(driver,Pageination.class);
+			try {
+				PAGE.itemPerPage();	
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			Assert.assertNotNull(PAGE);	
 	}
+	@Test(dependsOnMethods="pageTest")
+	public void Createuser() {
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		createuser=PageFactory.initElements(driver,CreateUser.class);
+			try {
+			createuser.create();	
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			Assert.assertNotNull(PAGE);	
+	}
+}
+	
 

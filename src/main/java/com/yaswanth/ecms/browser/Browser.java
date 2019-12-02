@@ -1,4 +1,4 @@
-package com.revature.ecms.browser;
+package com.yaswanth.ecms.browser;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

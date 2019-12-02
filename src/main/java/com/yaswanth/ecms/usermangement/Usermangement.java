@@ -1,4 +1,4 @@
-package com.revature.ecms.usermangement;
+package com.yaswanth.ecms.usermangement;
 /**
  * @author hp
  * this class show to UserManagement in ECMS application
@@ -23,38 +23,31 @@ public class Usermangement {
 	WebElement userManagement;
 	
 	
-	@CacheLookup
-	@FindBy(how=How.XPATH,using="//input[@id='mat-input-3']")
-	WebElement Search;
 	
 	@CacheLookup
 	@ FindBy(how=How.XPATH,using="//i[contains(text(),'archive')]")
 	WebElement Downlode;
 	
 	@CacheLookup
-	@FindBy(how=How.XPATH,using="//tr[1]//td[7]//div[1]")
-	WebElement Active;
+	@FindBy(how=How.XPATH,using="//input[@id='mat-input-3']")
+	WebElement Search;
 	
+
+	public void searchField(String search) throws InterruptedException {
+		Thread.sleep(60000);
+		Search.sendKeys(search);
+		
+	}
 	public void management() throws InterruptedException {
 		Thread.sleep(60000);
 		userManagement.click();
 	
 	}
 
-	public void searchField(String search ) throws InterruptedException {
-		Thread.sleep(60000);
-		Search.sendKeys(search);
-		Search.getText();
-			
-	}
+	
 	public void downloadpage() throws InterruptedException {
 		Thread.sleep(6000);
 		Downlode.click();
-	}
-	public void Activebutton() throws InterruptedException {
-		Thread.sleep(6000);
-		Active.click();
-		
 	}
 	
 	
