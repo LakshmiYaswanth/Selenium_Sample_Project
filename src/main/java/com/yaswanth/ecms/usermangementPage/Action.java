@@ -1,4 +1,4 @@
-package com.yaswanth.ecms.usermangement;
+package com.yaswanth.ecms.usermangementPage;
 
 
 import org.openqa.selenium.WebDriver;
@@ -22,9 +22,6 @@ public class Action {
 	@FindBy(how=How.XPATH,using="//button[contains(text(),'Back')]")
 	WebElement back;
 	
-	
-	
-
 	public void action() throws InterruptedException {
 		Thread.sleep(6000);
 		update.click();

@@ -1,4 +1,4 @@
-package com.yaswanth.ecms.usermangement;
+package com.yaswanth.ecms.usermangementPage;
 /**
  * @author hp
  * this class show to UserManagement in ECMS application
@@ -22,7 +22,7 @@ public class Usermangement {
 	@FindBy(how=How.XPATH,using="//p[contains(text(),'User Management')]")
 	WebElement userManagement;
 	
-	
+	//i[contains(text(),'person')]
 	
 	@CacheLookup
 	@ FindBy(how=How.XPATH,using="//i[contains(text(),'archive')]")

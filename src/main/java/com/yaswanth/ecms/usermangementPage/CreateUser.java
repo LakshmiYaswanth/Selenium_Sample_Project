@@ -1,4 +1,4 @@
-package com.yaswanth.ecms.usermangement;
+package com.yaswanth.ecms.usermangementPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

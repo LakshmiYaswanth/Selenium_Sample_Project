@@ -1,27 +1,34 @@
-package com.revature.ecms.loginTest;
+package com.yaswanth.ecms.testcase;
 
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.revature.ecms.browser.Browser;
-import com.revature.ecms.login.Login;
+import com.yaswanth.ecms.configuration.Baseclass;
+import com.yaswanth.ecms.configuration.Browser;
+import com.yaswanth.ecms.loginpage.Login;
+
+
 //this is used to check for invalid details to login
 public class LoginWithInValidDetailsTest {
 	WebDriver driver;
 	Login loginpage;
 	
+	 private static Properties properties =Baseclass.getProperties();
+	 public final  String URL = properties.getProperty("url");
+	 public final  String BROWSER = properties.getProperty("browser");
 	 /**
      * This test shows whether it chrome is opened or not.
      */
-	@BeforeTest
+	
+	@Test
 	public void beforelogin() {
 		Browser browser=new Browser();
-		driver=browser.connectBrowsers("Chrome","https://apollo-ecms.firebaseapp.com");
+		driver=browser.connectBrowsers(BROWSER,URL);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Assert.assertNotNull(driver);
 		
@@ -38,17 +45,22 @@ public class LoginWithInValidDetailsTest {
 	@Test
 	public void validateLogin() {
 	    loginpage=PageFactory.initElements(driver,Login.class);
-		loginpage.login("yes1234@gmail.com","admin1234");
+		try {
+			loginpage.login("yes1234@gmail.com","admin1234");
+		} catch (InterruptedException e) { 
+			e.printStackTrace();
+		}
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		Assert.assertFalse(false);
 	}
 	 
-	@Test
-	public void usermangementTest() {
-		
-		
-	}
-	
-	
+	@Test(dependsOnMethods="invalidCredentials")
+	public void forgotpassword() {
+		loginpage.forgotpassword();
+		//logger.info("Forgot password page is opened");
+		String CurrentUrl=driver.getCurrentUrl();
+		System.out.println(CurrentUrl);
+		Assert.assertEquals(CurrentUrl,"https://apollo-ecms.firebaseapp.com");
+	}	
 }
 

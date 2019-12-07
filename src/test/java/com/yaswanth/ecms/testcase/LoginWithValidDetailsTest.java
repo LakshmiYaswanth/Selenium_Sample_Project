@@ -1,5 +1,6 @@
-package com.revature.ecms.loginTest;
+package com.yaswanth.ecms.testcase;
 
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 
@@ -7,20 +8,19 @@ import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import com.yaswanth.ecms.configuration.Baseclass;
+import com.yaswanth.ecms.configuration.Browser;
+import com.yaswanth.ecms.loginpage.Login;
+import com.yaswanth.ecms.usermangementPage.Action;
+import com.yaswanth.ecms.usermangementPage.Active;
+import com.yaswanth.ecms.usermangementPage.CreateUser;
+import com.yaswanth.ecms.usermangementPage.Pageination;
+import com.yaswanth.ecms.usermangementPage.Usermangement;
 
-import com.paulhammant.ngwebdriver.NgWebDriver;
-import com.yaswanth.ecms.browser.Browser;
-import com.yaswanth.ecms.login.Login;
-import com.yaswanth.ecms.usermangement.Action;
-import com.yaswanth.ecms.usermangement.Active;
-import com.yaswanth.ecms.usermangement.CreateUser;
-import com.yaswanth.ecms.usermangement.Pageination;
-import com.yaswanth.ecms.usermangement.Usermangement;
+
 
 public class LoginWithValidDetailsTest {
-	NgWebDriver webdriver;
 	WebDriver driver;
 	Login loginpage;
 	Usermangement usermangement;
@@ -28,13 +28,16 @@ public class LoginWithValidDetailsTest {
 	CreateUser createuser;
 	Action ACTION;
 	Pageination PAGE;
+	private static Properties properties = Baseclass.getProperties();
+	 public final static String URL = properties.getProperty("url");
+	 public final static String BROWSER = properties.getProperty("browser");
 	 /**
      * This test shows whether it chrome is opened or not.
      */
-	@BeforeTest
+	@Test
 	public void beforelogin() {
 		Browser browser=new Browser();
-		driver=browser.connectBrowsers("Chrome","https://apollo-ecms.firebaseapp.com");
+		driver=browser.connectBrowsers(BROWSER,URL);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Assert.assertNotNull(driver);
 		
@@ -52,21 +55,15 @@ public class LoginWithValidDetailsTest {
 	public void validateLogin() {
 	
 	    loginpage=PageFactory.initElements(driver,Login.class);
-	    
-		try {
+	    try {
 			loginpage.login("admin@gmail.com","admin");
 		} catch (InterruptedException e) {
-		
 			e.printStackTrace();
-		}	
-		
-		
+		}
 		Assert.assertNotNull(loginpage);
 	}
 	@Test(dependsOnMethods="validateLogin")
 	public void usermanagementpageTest() {
-		
-	
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		usermangement=PageFactory.initElements(driver,Usermangement.class);
 		

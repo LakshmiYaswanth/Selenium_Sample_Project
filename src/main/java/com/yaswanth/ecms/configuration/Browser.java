@@ -1,4 +1,4 @@
-package com.yaswanth.ecms.browser;
+package com.yaswanth.ecms.configuration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -39,7 +39,7 @@ public class Browser {
 			 driver=new OperaDriver();
 			
 		}
-	    driver.manage().window().maximize();
+	   
 		driver.get(url);
 		return driver;
 	}

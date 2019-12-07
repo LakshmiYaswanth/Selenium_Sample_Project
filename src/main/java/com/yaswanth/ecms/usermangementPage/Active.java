@@ -1,4 +1,4 @@
-package com.yaswanth.ecms.usermangement;
+package com.yaswanth.ecms.usermangementPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +14,7 @@ public class Active {
    * @cachelookup is to store data in cache memory
    */
 	@CacheLookup
-	@FindBy(how=How.CLASS_NAME,using="togglebutton")
+	@FindBy(how=How.XPATH,using="//tr[1]//td[7]//div[1]")
 	WebElement Active;
 	
 	@CacheLookup
