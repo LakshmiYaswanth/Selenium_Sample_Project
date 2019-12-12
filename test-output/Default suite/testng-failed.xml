@@ -3,12 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.revature.ecms.loginTest.LoginWithValidDetailsTest">
+      <class name="com.yaswanth.ecms.testcase.LoginWithValidDetailsTest">
         <methods>
-          <include name="beforelogin"/>
+          <include name="updateTest"/>
+          <include name="usermanagementpageTest"/>
+          <include name="searchFieldTest"/>
+          <include name="downlodeTest"/>
+          <include name="activeTest"/>
           <include name="validateLogin"/>
+          <include name="Createuser"/>
+          <include name="pageTest"/>
         </methods>
-      </class> <!-- com.revature.ecms.loginTest.LoginWithValidDetailsTest -->
+      </class> <!-- com.yaswanth.ecms.testcase.LoginWithValidDetailsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

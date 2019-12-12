@@ -8,13 +8,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 /**
  * @author hp
  * this class show to login in ECMS application
  */
-public class Login {
+public  class  Login {
 	WebDriver driver;
+	WebElement element;
 	Logger logger = Logger.getLogger("Login.class");
 	 /**
      * All WebElements are identified by @FindBy annotation

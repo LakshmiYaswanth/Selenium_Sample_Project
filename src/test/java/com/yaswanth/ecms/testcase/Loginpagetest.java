@@ -24,7 +24,6 @@ public class Loginpagetest{
 	 /**
     * This test shows whether it chrome is opened or not.
     */
-	
 	@Test
 	public void browserpage() {
 		Browser browser=new Browser();
@@ -54,15 +53,21 @@ public class Loginpagetest{
 		driver.manage().timeouts().implicitlyWait(1200, TimeUnit.SECONDS);
 		String CurrentUrl=driver.getCurrentUrl();
 		System.out.println(CurrentUrl);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		Assert.assertEquals(CurrentUrl,"https://apollo-ecms.firebaseapp.com/admin-dashboard");
 	}
 	
 	@Test(dependsOnMethods="validateLogin")
 	public void invalidCredentials() {
 		try {
+		
 			loginpage.invalidLogin("admin@gmail123.com","admin123");
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
 		}
 		logger.info("invalidEmail and invalidpassword was entered ");
 		String CurrentUrl=driver.getCurrentUrl();

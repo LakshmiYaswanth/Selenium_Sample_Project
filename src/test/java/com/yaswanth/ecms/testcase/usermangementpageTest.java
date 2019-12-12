@@ -20,7 +20,7 @@ import com.yaswanth.ecms.usermangementPage.Usermangement;
 
 
 
-public class LoginWithValidDetailsTest {
+public class usermangementpageTest {
 	WebDriver driver;
 	Login loginpage;
 	Usermangement usermangement;
