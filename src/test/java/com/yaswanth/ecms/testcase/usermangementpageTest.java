@@ -62,6 +62,14 @@ public class usermangementpageTest {
 		}
 		Assert.assertNotNull(loginpage);
 	}
+	/**
+
+     * This test go to https://ecms-dev-assaycr.firebaseapp.usermanagement.com;
+
+     * Verify the user management using Dashboard message
+
+     */
+	
 	@Test(dependsOnMethods="validateLogin")
 	public void usermanagementpageTest() {
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -76,7 +84,14 @@ public class usermangementpageTest {
 		
 		Assert.assertNotNull(usermangement);
 		
-	}
+	} 
+	/**
+
+     * This test used to search the profil.
+
+     * Verify the home page using Dashboard message
+
+     */
 		@Test(dependsOnMethods="usermanagementpageTest")
 	public void searchFieldTest() {
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -90,6 +105,13 @@ public class usermangementpageTest {
 			}
 			Assert.assertNotNull(usermangement);
 	}
+		/**
+
+	     * This test used to downlode the list.
+
+	     * Verify the home page using Dashboard message
+
+	     */
 	@Test(dependsOnMethods="searchFieldTest")
 	public void downlodeTest() {
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -101,7 +123,11 @@ public class usermangementpageTest {
 				e.printStackTrace();
 			}
 			Assert.assertNotNull(usermangement);
-	}
+	} /**
+
+     * This test used to active the user.
+
+     */
 	@Test(dependsOnMethods="downlodeTest")
 		public void activeTest() {
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -115,6 +141,11 @@ public class usermangementpageTest {
 				}
 				Assert.assertNotNull(ACTIVE);	
 		}
+	/**
+
+     * This test used to update the user.
+
+     */
 	@Test(dependsOnMethods="activeTest")
 		public void updateTest() {
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -126,6 +157,11 @@ public class usermangementpageTest {
 				}
 				Assert.assertNotNull(ACTIVE);	
 		}
+	/**
+
+     * This test used to whether pagination of the page.
+
+     */
 	@Test(dependsOnMethods="updateTest")
 	public void pageTest() {
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -137,6 +173,11 @@ public class usermangementpageTest {
 			}
 			Assert.assertNotNull(PAGE);	
 	}
+	/**
+
+     * This test used to Create the user.
+
+     */
 	@Test(dependsOnMethods="pageTest")
 	public void Createuser() {
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

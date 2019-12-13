@@ -40,7 +40,9 @@ public class Loginpagetest{
 		logger.info("login page of application is opened");
 		
 	}
-
+	    /**
+	    * This test shows whether the loginpage is opened or not.
+	    */
 	@Test(dependsOnMethods="browserpage")
 	public void validateLogin() {
 	    loginpage=PageFactory.initElements(driver,Login.class);
@@ -60,7 +62,9 @@ public class Loginpagetest{
 		}
 		Assert.assertEquals(CurrentUrl,"https://apollo-ecms.firebaseapp.com/admin-dashboard");
 	}
-	
+	    /**
+	    * This test shows whether the loginpage and giving invalid Credentials is opened or not.
+	    */
 	@Test(dependsOnMethods="validateLogin")
 	public void invalidCredentials() {
 		try {
@@ -74,7 +78,9 @@ public class Loginpagetest{
 		System.out.println(CurrentUrl);
 		Assert.assertEquals(CurrentUrl,"https://apollo-ecms.firebaseapp.com/");
 	}
-	
+	/**
+	    * This test shows whether the forgotpassword is opened or not.
+	    */
 	@Test(dependsOnMethods="invalidCredentials")
 	public void forgotpassword() {
 		loginpage.forgotpassword();
