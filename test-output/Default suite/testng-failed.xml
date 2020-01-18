@@ -3,18 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.yaswanth.ecms.testcase.usermangementpageTest">
+      <class name="com.yaswanth.ecms.testcase.Loginpagetest">
         <methods>
-          <include name="Createuser"/>
-          <include name="activeTest"/>
+          <include name="invalidCredentials"/>
+          <include name="forgotpassword"/>
+          <include name="browserpage"/>
           <include name="validateLogin"/>
-          <include name="downlodeTest"/>
-          <include name="searchFieldTest"/>
-          <include name="usermanagementpageTest"/>
-          <include name="updateTest"/>
-          <include name="pageTest"/>
         </methods>
-      </class> <!-- com.yaswanth.ecms.testcase.usermangementpageTest -->
+      </class> <!-- com.yaswanth.ecms.testcase.Loginpagetest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -2,44 +2,44 @@
 <testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="185248" started-at="2019-12-16T15:32:20 IST" finished-at="2019-12-16T15:35:26 IST">
+  <suite name="Default suite" duration-ms="184016" started-at="2020-01-18T13:52:44 IST" finished-at="2020-01-18T13:55:48 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="185248" started-at="2019-12-16T15:32:20 IST" finished-at="2019-12-16T15:35:26 IST">
+    <test name="Default test" duration-ms="184016" started-at="2020-01-18T13:52:44 IST" finished-at="2020-01-18T13:55:48 IST">
       <class name="com.yaswanth.ecms.testcase.usermangementpageTest">
-        <test-method status="PASS" signature="beforelogin()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="beforelogin" duration-ms="13711" started-at="2019-12-16T15:32:20 IST" finished-at="2019-12-16T15:32:34 IST">
+        <test-method status="PASS" signature="beforelogin()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="beforelogin" duration-ms="13248" started-at="2020-01-18T13:52:44 IST" finished-at="2020-01-18T13:52:57 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforelogin -->
-        <test-method status="PASS" signature="validateLogin()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="validateLogin" duration-ms="6917" started-at="2019-12-16T15:32:34 IST" finished-at="2019-12-16T15:32:41 IST">
+        <test-method status="PASS" signature="validateLogin()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="validateLogin" duration-ms="6535" started-at="2020-01-18T13:52:57 IST" finished-at="2020-01-18T13:53:04 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLogin -->
-        <test-method status="PASS" signature="usermanagementpageTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="usermanagementpageTest" duration-ms="60283" started-at="2019-12-16T15:32:41 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.validateLogin" finished-at="2019-12-16T15:33:41 IST">
+        <test-method status="PASS" signature="usermanagementpageTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="usermanagementpageTest" duration-ms="60242" started-at="2020-01-18T13:53:04 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.validateLogin" finished-at="2020-01-18T13:54:04 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- usermanagementpageTest -->
-        <test-method status="PASS" signature="searchFieldTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="searchFieldTest" duration-ms="60584" started-at="2019-12-16T15:33:41 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.usermanagementpageTest" finished-at="2019-12-16T15:34:42 IST">
+        <test-method status="PASS" signature="searchFieldTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="searchFieldTest" duration-ms="60711" started-at="2020-01-18T13:54:04 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.usermanagementpageTest" finished-at="2020-01-18T13:55:05 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchFieldTest -->
-        <test-method status="PASS" signature="downlodeTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="downlodeTest" duration-ms="6380" started-at="2019-12-16T15:34:42 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.searchFieldTest" finished-at="2019-12-16T15:34:48 IST">
+        <test-method status="PASS" signature="downlodeTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="downlodeTest" duration-ms="6297" started-at="2020-01-18T13:55:05 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.searchFieldTest" finished-at="2020-01-18T13:55:11 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- downlodeTest -->
-        <test-method status="PASS" signature="activeTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="activeTest" duration-ms="19188" started-at="2019-12-16T15:34:48 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.downlodeTest" finished-at="2019-12-16T15:35:08 IST">
+        <test-method status="PASS" signature="activeTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="activeTest" duration-ms="18964" started-at="2020-01-18T13:55:11 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.downlodeTest" finished-at="2020-01-18T13:55:30 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- activeTest -->
-        <test-method status="PASS" signature="updateTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="updateTest" duration-ms="12826" started-at="2019-12-16T15:35:08 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.activeTest" finished-at="2019-12-16T15:35:20 IST">
+        <test-method status="PASS" signature="updateTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="updateTest" duration-ms="12747" started-at="2020-01-18T13:55:30 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.activeTest" finished-at="2020-01-18T13:55:43 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateTest -->
-        <test-method status="PASS" signature="pageTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="pageTest" duration-ms="2303" started-at="2019-12-16T15:35:20 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.updateTest" finished-at="2019-12-16T15:35:23 IST">
+        <test-method status="PASS" signature="pageTest()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="pageTest" duration-ms="2315" started-at="2020-01-18T13:55:43 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.updateTest" finished-at="2020-01-18T13:55:45 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pageTest -->
-        <test-method status="PASS" signature="Createuser()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="Createuser" duration-ms="2981" started-at="2019-12-16T15:35:23 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.pageTest" finished-at="2019-12-16T15:35:26 IST">
+        <test-method status="PASS" signature="Createuser()[pri:0, instance:com.yaswanth.ecms.testcase.usermangementpageTest@67205a84]" name="Createuser" duration-ms="2875" started-at="2020-01-18T13:55:45 IST" depends-on-methods="com.yaswanth.ecms.testcase.usermangementpageTest.pageTest" finished-at="2020-01-18T13:55:48 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Createuser -->

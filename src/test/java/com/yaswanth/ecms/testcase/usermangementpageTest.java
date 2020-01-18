@@ -20,7 +20,7 @@ import com.yaswanth.ecms.usermangementPage.Usermangement;
 
 
 
-public class usermangementpageTest {
+public class usermangementpageTest  {
 	WebDriver driver;
 	Login loginpage;
 	Usermangement usermangement;
@@ -29,8 +29,8 @@ public class usermangementpageTest {
 	Action ACTION;
 	Pageination PAGE;
 	private static Properties properties = Baseclass.getProperties();
-	 public final static String URL = properties.getProperty("url");
-	 public final static String BROWSER = properties.getProperty("browser");
+	public final static String URL = properties.getProperty("url");
+	public final static String BROWSER = properties.getProperty("browser");
 	 /**
      * This test shows whether it chrome is opened or not.
      */
@@ -188,7 +188,7 @@ public class usermangementpageTest {
 				e.printStackTrace();
 			}
 			Assert.assertNotNull(PAGE);	
-	}
+	        }
 }
 	
 

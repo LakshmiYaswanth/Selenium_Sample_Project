@@ -44,6 +44,10 @@ public  class  Login {
 	@FindBy(how=How.XPATH,using="//a[contains(text(),'Forgot Password')]")
 	WebElement forgetpassword;
 	
+	@CacheLookup
+	@FindBy(how=How.XPATH,using="//a[contains(text(),'Back')]")
+	WebElement Back;
+	
 	 /**
 	  
      * This POM method will be shown in test case to login in the application
@@ -60,15 +64,9 @@ public  class  Login {
 		submit.click();
 		Thread.sleep(6000);
 	}
-	public void invalidLogin(String username,String pass) throws InterruptedException {
-		back.click();
-		userId.sendKeys(username);
-		password.sendKeys(pass);
-		submit.click();
-		Thread.sleep(6000);
-	}
-	public void forgotpassword() {
+	public void forgotpassword() throws InterruptedException {
 		forgetpassword.click();
-		driver.navigate().back();
+		Back.click();
+		Thread.sleep(1000);
 	}
 }

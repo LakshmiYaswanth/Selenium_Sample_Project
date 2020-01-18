@@ -43,8 +43,9 @@ public class Loginpagetest{
 	    /**
 	    * This test shows whether the loginpage is opened or not.
 	    */
-	@Test(dependsOnMethods="browserpage")
+	@Test(dependsOnMethods="forgotpassword")
 	public void validateLogin() {
+		driver.navigate().refresh();
 	    loginpage=PageFactory.initElements(driver,Login.class);
 		try {
 			loginpage.login("admin@gmail.com","admin");
@@ -65,11 +66,12 @@ public class Loginpagetest{
 	    /**
 	    * This test shows whether the loginpage and giving invalid Credentials is opened or not.
 	    */
-	@Test(dependsOnMethods="validateLogin")
+	@Test(dependsOnMethods="browserpage")
 	public void invalidCredentials() {
+		loginpage=PageFactory.initElements(driver,Login.class);
 		try {
 		
-			loginpage.invalidLogin("admin@gmail123.com","admin123");
+			loginpage.login("admin@gmail123.com","admin123");
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}
@@ -83,11 +85,18 @@ public class Loginpagetest{
 	    */
 	@Test(dependsOnMethods="invalidCredentials")
 	public void forgotpassword() {
-		loginpage.forgotpassword();
-		logger.info("Forgot password page is opened");
+		loginpage=PageFactory.initElements(driver,Login.class);
+		try {
+			loginpage.forgotpassword();
+			logger.info("Forgot password page is opened");
+			
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		String CurrentUrl=driver.getCurrentUrl();
 		System.out.println(CurrentUrl);
-		Assert.assertEquals(CurrentUrl,"https://apollo-ecms.firebaseapp.com");
+		Assert.assertEquals(CurrentUrl,"https://apollo-ecms.firebaseapp.com/login");
 	}
 	 
 }
